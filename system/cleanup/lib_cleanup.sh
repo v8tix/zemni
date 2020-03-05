@@ -1,5 +1,5 @@
 dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-. ""${dir}"/../../../lib/dye4b/dye4b.sh"
+. ""${dir}"/../../lib/dye4b/dye4b.sh"
 
 BASH_BACKGROUND="$(bgc -c black)"
 BASH_FOREGROUND="$(fg_ce -c white -e normal)"

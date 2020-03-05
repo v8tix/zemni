@@ -25,7 +25,7 @@ The Zemni workspace is composed by a series of directories. They each provide es
 * build: 
   * Provides scripts to install Build Tools like Maven.         
 * execution:
-  * If your app needs a compiler, a runtime or an SDK this is the place where you can include such scripts.  
+  * If your app needs a compiler, a runtime or a SDK this is the place where you can include such scripts.  
 * lib: 
   * Use this when you need to write custom utilities like logging libraries or to add third party libraries.
 * system: 

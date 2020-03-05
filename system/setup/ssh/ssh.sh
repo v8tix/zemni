@@ -2,7 +2,7 @@
 dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 . ""${dir}"/lib_ssh.sh"
 dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-. ""${dir}"/../../../../common.sh"
+. ""${dir}"/../../../common.sh"
 
 setup_pk \
   -root "${ROOT_ACCESS}"  \
