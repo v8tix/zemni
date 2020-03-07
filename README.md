@@ -4,8 +4,8 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="display: block; border-width:0; float: right" align="left" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><br/>
 
-Welcome to the Zemni project. This project is the heart of the Drako project. 
-Zemni is a set of Bash libraries that can help you build Docker containers preventing [supply chain attacks](https://docs.microsoft.com/en-us/windows/security/threat-protection/intelligence/supply-chain-malware).
+Welcome to the Zemni project. This project is the heart of the [Drako](https://github.com/v8tix/drako) project. 
+Zemni is a set of Bash libraries that can help you build Docker containers preventing security vulnerabilities.
 
 ## What this guide covers
 1. Zemni advantages.
@@ -14,11 +14,11 @@ Zemni is a set of Bash libraries that can help you build Docker containers preve
 4. Zemni example.
 
 ### 1. Zemni advantages.
-* :gem: Eliminates Bash commands from Docker files. Instead a Docker file becomes an interface to Zemni functions.
+* :gem: Eliminates chains of Bash commands from Docker files instructions. Instead an instruction becomes an interface to the Bash functions.
 * Every function was written using the [Google's Shell Style Guide](https://google.github.io/styleguide/shellguide.html).        
 * Zemni uses Debian's verified packages.      
-* Libraries can be tested using VMs or containers.
-* Modularity. You can check how to build a separate set of functionality using pure Bash.        
+* These functions can be tested using VMs or containers.
+* You can learn how to build a separate set of functionality using pure Bash.        
 * Every function returns a detailed message when error occurs.  
 ### 2. Workspace description.  
 The Zemni workspace is composed by a series of directories. They each provide essential scripts that are appropriate to accomplish different tasks.  
@@ -31,7 +31,7 @@ The Zemni workspace is composed by a series of directories. They each provide es
 * system: 
   * Contains scripts related to Linux administration tasks.
 ### 3. Project configuration.
-* Under the zemni directory you can find a file called common.sh. In this file you will find a set of constants related to each Zemni function.
+* At the root directory you will find a file called common.sh. It contains a set of constants related to each Zemni function.
 * :warning: We highly recommend to check this file and upgrade its constants with your personal information.
 ### 4. Zemni example.
 * Here you can find a code fragment that configures the locale on an Ubuntu container: 
@@ -48,10 +48,9 @@ The Zemni workspace is composed by a series of directories. They each provide es
   ````
   FROM debian:buster-20200130
   ...
-  RUN ["/bin/bash", "-c", "/home/ext/zemni/system/setup/repos/repos.sh"]
-  RUN ["/bin/bash", "-c", "/home/pkg/pkg.sh"]
-  RUN ["/bin/bash", "-c", "/home/ext/zemni/system/setup/locale/locale.sh"]
-  ENV LANG en_US.utf8
+  RUN ["/bin/bash", "-c", "/home/libraries/zemni/system/setup/repos/repos.sh"]
+  RUN ["/bin/bash", "-c", "/home/packages/packages.sh"]
+  RUN ["/bin/bash", "-c", "/home/libraries/zemni/system/setup/locale/locale.sh"]
   ...
   ````     
 ## Authors
