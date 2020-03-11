@@ -1,0 +1,14 @@
+spring:
+  main:
+    banner-mode: "off"
+  profiles:
+    active:
+      <1>
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
