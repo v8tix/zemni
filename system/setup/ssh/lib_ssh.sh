@@ -242,7 +242,7 @@ setup_pk() {
 
     fi
 
-    chmod 700 ssh_dir=/home/"${user}"/.ssh
+    chmod 700 "${ssh_dir}"
 
     info \
       -o "setup_pk" \
