@@ -138,6 +138,7 @@ fi
 #   no_errors_code
 #   error_code
 # Arguments:
+#    -user       <linux_user>
 #    -root       <root_access>
 #    -f          <file_name>
 #    -m          <user_email>
@@ -151,12 +152,15 @@ fi
 #   3      Unknown function option.
 #######################################
 setup_pk() {
-  ssh_dir=/home/v8tix/.ssh
   rst_service=0
 
-  if [[ $# -eq 10 ]]; then
+  if [[ $# -eq 12 ]]; then
     while (( "$#" )); do
       case "${1}" in
+        -user)
+          shift
+          user="${1}"
+          ;;
         -ph)
           shift
           ssh_passphrase="${1}"
@@ -218,21 +222,27 @@ setup_pk() {
         -rst "${rst_service}"
 
     fi
+
+    ssh_dir=/home/"${user}"/.ssh
     
     if [[ -d "${ssh_dir}" ]]; then
 
-      chmod 777 "${file_name}"
+      chmod 666 "${file_name}"
+      chmod 644 "${file_name}".pub
       mv "${file_name}" "${ssh_dir}"
       mv "${file_name}.pub" "${ssh_dir}"
 
     else
 
-      chmod 777 "${file_name}"
+      chmod 666 "${file_name}"
+      chmod 644 "${file_name}".pub
       mkdir "${ssh_dir}"
       mv "${file_name}" "${ssh_dir}"
       mv "${file_name}.pub" "${ssh_dir}"
 
     fi
+
+    chmod 700 ssh_dir=/home/"${user}"/.ssh
 
     info \
       -o "setup_pk" \
@@ -257,6 +267,7 @@ usage_setup_pk() {
 read -r -d '' temp_setup_pk<<"EOF"
 Usage: setup_pk -<OPTIONS>\n
   OPTIONS       PARAMS                  DESCRIPTION\n
+    -user       <linux_user>            The system linux user.\n
     -root       <root_access>           Allows access via SSH [0 allowed, 1 not allowed].\n
     -f          <file_name>             The file name for the new key.\n
     -m          <user_email>            The user email.\n
