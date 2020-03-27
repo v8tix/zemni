@@ -4,7 +4,7 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="display: block; border-width:0; float: right" align="left" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><br/>
 
-Welcome to the Zemni project. This project is the heart of the [Drako](https://github.com/v8tix/drako) project. 
+Welcome to the Zemni project. This project is the heart of the [k8sb](https://github.com/v8tix/k8sb) project. 
 Zemni is a set of Bash libraries that can help you build Docker containers preventing security vulnerabilities.
 
 ## What this guide covers
@@ -55,6 +55,8 @@ The Zemni workspace is composed by a series of directories. They each provide es
   ````     
 ## Authors
 * Initial work
-  * V8TIX - info@v8tix.com   
+
+![v8tix logo](resources/v8tix-logo.jpg) <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Contact us](mailto:info@v8tix.com)</p> 
+
 ## License  
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="display: block; border-width:0; float: right" align="left" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>&nbsp;</a>This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).  
